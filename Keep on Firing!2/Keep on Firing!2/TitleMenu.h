@@ -15,6 +15,8 @@ public:
 	void init()override;
 	void update()override;
 	void draw()const override;
+private:
+	const Font font = Font(16, Typeface::Medium);
+	const Rect messageBox = Rect(400, 320).setCenter(Window::Center());
 
 };
-
