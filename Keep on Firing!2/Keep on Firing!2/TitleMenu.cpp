@@ -17,7 +17,6 @@ void TitleMenu::init()
 
 void TitleMenu::update()
 {
-	Graphics2D::SetTransform(Mat3x2::Identity());
 	if (Input::MouseL.clicked)
 	{
 		stopwatch1.start();
@@ -44,7 +43,8 @@ void TitleMenu::update()
 
 void TitleMenu::draw() const
 {
-	RoundRect(messageBox, 20).draw(Color(20,30,120));
+	Graphics2D::SetTransform(Mat3x2::Identity());
+	RoundRect(messageBox, 20).draw(Color(20, 30, 120));
 	const double t0 = Min(stopwatch1.ms() / 500.0, 1.0);
 	const double e0 = EaseOut(Easing::Quart, t0);
 
@@ -68,7 +68,9 @@ void TitleMenu::draw() const
 
 			Graphics2D::SetTransform(Mat3x2::Translate(-center).scale(e).translate(center));
 			font(texts[i]).drawCenter(center);
+
 		}
+
 	}
 
 }
