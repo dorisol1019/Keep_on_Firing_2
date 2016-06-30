@@ -76,6 +76,12 @@
     <Filter Include="リソース ファイル\Example\Well">
       <UniqueIdentifier>{eb86b9be-05b8-45c6-89c8-f91a5437157c}</UniqueIdentifier>
     </Filter>
+    <Filter Include="リソース ファイル\Data">
+      <UniqueIdentifier>{e60e6869-28eb-4bb9-b46a-fcc126e3cc2e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="リソース ファイル\Data\System">
+      <UniqueIdentifier>{401f73bf-e2e4-40d6-ac6f-e9a879519b1c}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Main.cpp">
@@ -120,6 +126,9 @@
     </Image>
     <Image Include="Example\Well\Well.jpg">
       <Filter>リソース ファイル\Example\Well</Filter>
+    </Image>
+    <Image Include="Data\System\srdg_LOGO.png">
+      <Filter>リソース ファイル\Data\System</Filter>
     </Image>
   </ItemGroup>
   <ItemGroup>
