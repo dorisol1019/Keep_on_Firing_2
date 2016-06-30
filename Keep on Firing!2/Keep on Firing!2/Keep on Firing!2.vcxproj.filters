@@ -82,6 +82,12 @@
     <Filter Include="リソース ファイル\Data\System">
       <UniqueIdentifier>{75c68569-6173-49f2-8644-57a856371145}</UniqueIdentifier>
     </Filter>
+    <Filter Include="ソース ファイル\Mover">
+      <UniqueIdentifier>{2c9eb77f-17c5-4ed9-aa6e-8809583a3a58}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ヘッダー ファイル\Mover">
+      <UniqueIdentifier>{16938c85-894c-4335-b246-f41126c888df}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Main.cpp">
@@ -92,6 +98,15 @@
     </ClCompile>
     <ClCompile Include="Game.cpp">
       <Filter>ソース ファイル</Filter>
+    </ClCompile>
+    <ClCompile Include="Mover.cpp">
+      <Filter>ソース ファイル\Mover</Filter>
+    </ClCompile>
+    <ClCompile Include="MoverManager.cpp">
+      <Filter>ソース ファイル\Mover</Filter>
+    </ClCompile>
+    <ClCompile Include="Enemy.cpp">
+      <Filter>ソース ファイル\Mover</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -412,6 +427,15 @@
     </ClInclude>
     <ClInclude Include="Game.h">
       <Filter>ヘッダー ファイル</Filter>
+    </ClInclude>
+    <ClInclude Include="Mover.h">
+      <Filter>ヘッダー ファイル\Mover</Filter>
+    </ClInclude>
+    <ClInclude Include="MoverManager.h">
+      <Filter>ヘッダー ファイル\Mover</Filter>
+    </ClInclude>
+    <ClInclude Include="Enemy.h">
+      <Filter>ヘッダー ファイル\Mover</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
