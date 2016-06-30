@@ -1,7 +1,9 @@
 ﻿
 #include <Siv3D.hpp>
+#include<HamFramework.hpp>
 #include"main.h"
 #include"TitleMenu.h"
+#include"Game.h"
 void Main()
 {
 	Window::SetTitle(L"撃ち続けろ！ver2");
@@ -14,8 +16,8 @@ void Main()
 	AppScene scenemanager();
 #endif // DEBUG
 
+	scenemanager.add<Game>(L"Game");
 	scenemanager.add<TitleMenu>(L"Title");
-
 
 	while (System::Update())
 	{
