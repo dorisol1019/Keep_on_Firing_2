@@ -171,7 +171,6 @@
     <ResourceCompile Include="Resource.rc" />
   </ItemGroup>
   <ItemGroup>
-    <Image Include="Data\System\srdg_LOGO.png" />
     <Image Include="Engine\Splash.png" />
     <Image Include="Example\Brick.jpg" />
     <Image Include="Example\Earth.jpg" />
