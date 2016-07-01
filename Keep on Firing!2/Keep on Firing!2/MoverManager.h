@@ -44,6 +44,8 @@ public:
 		}
 	}
 
+	typename std::vector<std::shared_ptr<Type>>::const_iterator begin() { return movers.begin(); }
+	typename std::vector<std::shared_ptr<Type>>::const_iterator end() { return movers.end(); }
 
 
 private:

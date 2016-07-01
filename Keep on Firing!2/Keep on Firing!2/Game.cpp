@@ -31,6 +31,8 @@ void Game::update()
 	playerManager.update();
 	me.update();
 	
+
+
 }
 
 void Game::draw() const
