@@ -88,6 +88,9 @@
     <Filter Include="ヘッダー ファイル\Mover">
       <UniqueIdentifier>{16938c85-894c-4335-b246-f41126c888df}</UniqueIdentifier>
     </Filter>
+    <Filter Include="リソース ファイル\Data\picture">
+      <UniqueIdentifier>{ab40b17d-d09e-41ef-9b8e-248ed56b85e9}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Main.cpp">
@@ -106,6 +109,9 @@
       <Filter>ソース ファイル\Mover</Filter>
     </ClCompile>
     <ClCompile Include="Enemy.cpp">
+      <Filter>ソース ファイル\Mover</Filter>
+    </ClCompile>
+    <ClCompile Include="Player.cpp">
       <Filter>ソース ファイル\Mover</Filter>
     </ClCompile>
   </ItemGroup>
@@ -147,6 +153,12 @@
     </Image>
     <Image Include="Data\System\srdg_LOGO.png">
       <Filter>リソース ファイル\Data\System</Filter>
+    </Image>
+    <Image Include="Data\picture\GameScoreView.png">
+      <Filter>リソース ファイル\Data\picture</Filter>
+    </Image>
+    <Image Include="Data\picture\MyVehicle0.png">
+      <Filter>リソース ファイル\Data\picture</Filter>
     </Image>
   </ItemGroup>
   <ItemGroup>
@@ -435,6 +447,9 @@
       <Filter>ヘッダー ファイル\Mover</Filter>
     </ClInclude>
     <ClInclude Include="Enemy.h">
+      <Filter>ヘッダー ファイル\Mover</Filter>
+    </ClInclude>
+    <ClInclude Include="Player.h">
       <Filter>ヘッダー ファイル\Mover</Filter>
     </ClInclude>
   </ItemGroup>

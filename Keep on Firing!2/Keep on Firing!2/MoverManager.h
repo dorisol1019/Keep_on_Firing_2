@@ -42,7 +42,6 @@ public:
 		{
 			i->draw();
 		}
-		FontAsset(L"gameFont")(movers.size()).draw();
 	}
 
 

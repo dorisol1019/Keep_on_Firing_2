@@ -14,8 +14,12 @@ Game::~Game()
 void Game::init()
 {
 	FontAsset::Register(L"gameFont", 16, L"MSÉSÉVÉbÉN");
+	TextureAsset::Register(L"ScoreView", L"Data/picture/GameScoreView.png");
+
 	auto e = make_shared<Enemy>();
 	me.add(e);
+	auto p = make_shared<Player>();
+	playerManager.add(p);
 }
 
 void Game::update()
@@ -24,10 +28,15 @@ void Game::update()
 	{
 		me.add(make_shared<Enemy>());
 	}
+	playerManager.update();
 	me.update();
+	
 }
 
 void Game::draw() const
 {
+	
+	TextureAsset(L"ScoreView").draw();
+	playerManager.draw();
 	me.draw();
 }

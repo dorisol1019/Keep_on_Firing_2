@@ -4,7 +4,7 @@
 #include"main.h"
 #include"MoverManager.h"
 #include"Enemy.h"
-
+#include"Player.h"
 class Game :
 	public AppScene::Scene
 {
@@ -17,7 +17,6 @@ public:
 	void draw()const override;
 
 	MoverManager<Enemy>me;
-	
-
+	MoverManager<Player>playerManager;
 };
 
