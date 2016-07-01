@@ -68,6 +68,7 @@ void Player::createBullet(MoverManager<Bullet>&bulletManager)
 	}*/
 	if (is_fire())
 	{
+//		for(auto&i:step(9))
 		bulletManager.add(BulletFactory::createBullet<PlayerNormalBullet>({ pos.x,pos.y - 10 }, Radians(-90), 5.0));
 	}
 }
