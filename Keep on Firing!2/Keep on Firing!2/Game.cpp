@@ -34,15 +34,9 @@ void Game::update()
 	
 	for (auto& i : playerManager)
 	{
-		if (i->is_fire())
-		{
-			bulletManager.add(i->createBullet());
-		}
+		i->createBullet(bulletManager);
 	}
-	for (auto& i : step(50))
-	{
-		bulletManager.add((*playerManager.begin())->createBullet());
-	}
+
 	bulletManager.update();
 
 }

@@ -24,6 +24,11 @@ public:
 				i = m;
 				return;
 			}
+			if (i == m)
+			{
+				i = m;
+				return;
+			}
 		}
 		movers.push_back(m);
 	}

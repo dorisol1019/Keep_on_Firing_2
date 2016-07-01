@@ -2,16 +2,22 @@
 
 
 
-PlayerNormalBullet::PlayerNormalBullet(Vec2 pos)
+
+PlayerNormalBullet::PlayerNormalBullet(Vec2 pos, double angle, double speed):Bullet(pos,angle,speed)
 {
 	TextureAsset::Register(L"NormalBullet", L"Data/picture/meshot2.png");
-	speed = 5;
-	this->pos = pos;
+	init(pos, angle, speed);
 }
-
 
 PlayerNormalBullet::~PlayerNormalBullet()
 {
+}
+
+void PlayerNormalBullet::init(Vec2 pos, double angle, double speed){
+	this->speed = speed;
+	this->pos = pos;
+	this->angle = angle;
+	enable = true;
 }
 
 void PlayerNormalBullet::update()
@@ -20,8 +26,9 @@ void PlayerNormalBullet::update()
 	{
 
 		d = { 0,-1 };
-		pos += speed*d;
-		if (pos.y < -50)
+		pos += speed*Vec2(Cos(angle), Sin(angle));
+		//pos += d;
+		if (pos.y < -50 || pos.y>620 || pos.x < 0 || pos.x>800)
 		{
 			enable = false;
 		}

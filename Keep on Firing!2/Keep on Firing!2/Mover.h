@@ -24,6 +24,7 @@ protected:
 
 	Vec2 pos = Window::Center();
 	double speed = -1.0;
+	double angle = -1.0;
 	Vec2 d = Vec2( 0,0 );
 //	Circle&collition = { pos.xy(),0 };
 	bool enable = true;

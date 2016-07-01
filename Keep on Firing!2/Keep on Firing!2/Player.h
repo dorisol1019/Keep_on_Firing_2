@@ -1,10 +1,12 @@
 #pragma once
 #include "Mover.h"
 #include"PlayerNormalBullet.h"
+#include"MoverManager.h"
+#include"IFirer.h"
 #include<memory>
 
 class Player :
-	public Mover
+	public Mover,IFirer
 {
 public:
 	Player();
@@ -15,10 +17,11 @@ public:
 
 	bool is_fire();
 
-	shared_ptr<PlayerNormalBullet> createBullet();
+	void createBullet(MoverManager<Bullet>& bulletmanager)override;
 private:
 	bool fire = false;
-
+	int frameCount = 0;
+	
 
 //	shared_ptr
 };
