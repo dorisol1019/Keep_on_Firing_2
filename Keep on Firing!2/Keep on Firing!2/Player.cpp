@@ -15,6 +15,7 @@ Player::~Player()
 
 void Player::update()
 {
+	fire = false;
 	d = Vec2( 0,0 );
 	
 	if (Input::KeyUp.pressed)
@@ -50,4 +51,9 @@ void Player::draw() const
 bool Player::is_fire()
 {
 	return fire;
+}
+
+shared_ptr<PlayerNormalBullet> Player::createBullet()
+{
+	return make_shared<PlayerNormalBullet>(Vec2(pos.x, pos.y - 25));
 }

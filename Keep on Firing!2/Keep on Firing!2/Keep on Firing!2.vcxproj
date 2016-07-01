@@ -171,6 +171,7 @@
     <ClCompile Include="Mover.cpp" />
     <ClCompile Include="MoverManager.cpp" />
     <ClCompile Include="Player.cpp" />
+    <ClCompile Include="PlayerNormalBullet.cpp" />
     <ClCompile Include="TitleMenu.cpp" />
   </ItemGroup>
   <ItemGroup>
@@ -178,6 +179,7 @@
   </ItemGroup>
   <ItemGroup>
     <Image Include="Data\picture\GameScoreView.png" />
+    <Image Include="Data\picture\meshot2.png" />
     <Image Include="Data\picture\MyVehicle0.png" />
     <Image Include="Data\System\srdg_LOGO.png" />
     <Image Include="Engine\Splash.png" />
@@ -294,6 +296,7 @@
     <ClInclude Include="Mover.h" />
     <ClInclude Include="MoverManager.h" />
     <ClInclude Include="Player.h" />
+    <ClInclude Include="PlayerNormalBullet.h" />
     <ClInclude Include="TitleMenu.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

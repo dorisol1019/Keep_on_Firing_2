@@ -5,7 +5,7 @@ class Bullet :
 {
 public:
 	Bullet();
-	~Bullet();
+	virtual ~Bullet();
 	
 	void update()override = 0;
 	void draw()const override = 0;

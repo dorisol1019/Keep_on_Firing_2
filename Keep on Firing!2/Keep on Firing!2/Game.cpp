@@ -1,5 +1,6 @@
 #include "Game.h"
 
+#include"PlayerNormalBullet.h"
 
 
 Game::Game()
@@ -31,7 +32,18 @@ void Game::update()
 	playerManager.update();
 	me.update();
 	
-
+	for (auto& i : playerManager)
+	{
+		if (i->is_fire())
+		{
+			bulletManager.add(i->createBullet());
+		}
+	}
+	for (auto& i : step(50))
+	{
+		bulletManager.add((*playerManager.begin())->createBullet());
+	}
+	bulletManager.update();
 
 }
 
@@ -40,6 +52,7 @@ void Game::draw() const
 	
 	playerManager.draw();
 	me.draw();
+	bulletManager.draw();
 
 	TextureAsset(L"ScoreView").draw();
 }

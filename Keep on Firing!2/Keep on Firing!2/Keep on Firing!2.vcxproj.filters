@@ -117,6 +117,9 @@
     <ClCompile Include="Bullet.cpp">
       <Filter>ソース ファイル\Mover</Filter>
     </ClCompile>
+    <ClCompile Include="PlayerNormalBullet.cpp">
+      <Filter>ソース ファイル\Mover</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="Resource.rc">
@@ -161,6 +164,9 @@
       <Filter>リソース ファイル\Data\picture</Filter>
     </Image>
     <Image Include="Data\picture\MyVehicle0.png">
+      <Filter>リソース ファイル\Data\picture</Filter>
+    </Image>
+    <Image Include="Data\picture\meshot2.png">
       <Filter>リソース ファイル\Data\picture</Filter>
     </Image>
   </ItemGroup>
@@ -456,6 +462,9 @@
       <Filter>ヘッダー ファイル\Mover</Filter>
     </ClInclude>
     <ClInclude Include="Bullet.h">
+      <Filter>ヘッダー ファイル\Mover</Filter>
+    </ClInclude>
+    <ClInclude Include="PlayerNormalBullet.h">
       <Filter>ヘッダー ファイル\Mover</Filter>
     </ClInclude>
   </ItemGroup>

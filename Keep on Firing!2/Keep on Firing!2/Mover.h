@@ -16,6 +16,9 @@ public:
 	void kill() { enable = false; }
 	bool is_enable()const { return enable; }
 
+	Vec2 getPos() {
+		return pos;
+	}
 private:
 protected:
 
