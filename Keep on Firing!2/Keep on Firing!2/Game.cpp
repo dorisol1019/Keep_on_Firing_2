@@ -38,7 +38,8 @@ void Game::update()
 void Game::draw() const
 {
 	
-	TextureAsset(L"ScoreView").draw();
 	playerManager.draw();
 	me.draw();
+
+	TextureAsset(L"ScoreView").draw();
 }

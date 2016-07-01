@@ -5,6 +5,7 @@
 #include"MoverManager.h"
 #include"Enemy.h"
 #include"Player.h"
+#include"Bullet.h"
 class Game :
 	public AppScene::Scene
 {
@@ -18,5 +19,6 @@ public:
 
 	MoverManager<Enemy>me;
 	MoverManager<Player>playerManager;
+	MoverManager<Bullet>bulletManager;
 };
 
