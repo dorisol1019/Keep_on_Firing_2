@@ -18,7 +18,7 @@ namespace BulletFactory
 	shared_ptr<Bullet> createBullet(Vec2 pos, double angle, double speed)
 	{
 		string index = string(typeid(T).name());
-		FontAsset(L"gameFont")(bullets[index].size()).draw({400,0});
+		//FontAsset(L"gameFont")(bullets[index].size()).draw({400,0});
 		for (auto& i : bullets[index])
 		{
 			if (!i->is_enable())

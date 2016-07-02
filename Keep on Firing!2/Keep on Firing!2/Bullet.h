@@ -4,7 +4,11 @@ class Bullet :
 	public Mover
 {
 public:
-	Bullet(Vec2 pos, double angle, double speed) {};
+	Bullet(Vec2 pos, double angle, double speed) {
+		this->pos = pos;
+		this->angle = angle;
+		this->speed = speed;
+	};
 	virtual ~Bullet() = default;
 	
 	virtual void init(Vec2 pos, double angle, double speed)=0;

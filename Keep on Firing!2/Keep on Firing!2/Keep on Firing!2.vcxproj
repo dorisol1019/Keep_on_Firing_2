@@ -164,6 +164,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="BackGroundImage.cpp" />
     <ClCompile Include="Bullet.cpp" />
     <ClCompile Include="Enemy.cpp" />
     <ClCompile Include="Game.cpp" />
@@ -181,6 +182,7 @@
     <Image Include="Data\picture\GameScoreView.png" />
     <Image Include="Data\picture\meshot2.png" />
     <Image Include="Data\picture\MyVehicle0.png" />
+    <Image Include="Data\picture\stage1.png" />
     <Image Include="Data\System\srdg_LOGO.png" />
     <Image Include="Engine\Splash.png" />
     <Image Include="Example\Brick.jpg" />
@@ -289,6 +291,7 @@
     <Font Include="Example\YomogiFont.ttf" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="BackGroundImage.h" />
     <ClInclude Include="Bullet.h" />
     <ClInclude Include="BulletFactory.h" />
     <ClInclude Include="Enemy.h" />
