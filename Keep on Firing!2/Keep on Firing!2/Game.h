@@ -27,9 +27,10 @@ public:
 	void draw()const override;
 
 private:
-	MoverManager<Enemy>me;
+	MoverManager<Enemy>enemyManager;
 	MoverManager<Player>playerManager;
-	MoverManager<Bullet>bulletManager;
+	MoverManager<Bullet>playerBulletManager;
+	MoverManager<Bullet>enemyBulletManager;
 	
 
 	BackGroundImage backGroundImage;

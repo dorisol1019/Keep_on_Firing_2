@@ -21,11 +21,10 @@ void Game::init()
 	
 
 	auto e = make_shared<Enemy>();
-	me.add(e);
+	enemyManager.add(e);
 	auto p = make_shared<Player>();
 	playerManager.add(p);
 }
-
 
 void Game::update()
 {
@@ -33,17 +32,17 @@ void Game::update()
 	backGroundImage.update();
 	if (Input::KeyZ.clicked)
 	{
-		me.add(make_shared<Enemy>());
+		enemyManager.add(make_shared<Enemy>());
 	}
 	playerManager.update();
-	me.update();
+	enemyManager.update();
 
 	for (auto& i : playerManager)
 	{
-		i->createBullet(bulletManager);
+		i->createBullet(playerBulletManager);
 	}
 
-	bulletManager.update();
+	playerBulletManager.update();
 
 }
 
@@ -52,8 +51,8 @@ void Game::draw() const
 	
 	backGroundImage.draw();
 	playerManager.draw();
-	me.draw();
-	bulletManager.draw();
+	enemyManager.draw();
+	playerBulletManager.draw();
 
 	TextureAsset(L"ScoreView").draw();
 }
