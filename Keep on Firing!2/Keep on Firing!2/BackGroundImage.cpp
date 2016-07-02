@@ -25,7 +25,7 @@ BackGroundImage::BackGroundImage()
 		texturesPos[i]={160,-120 + 120 * i };
 	}
 }
-Array<Texture>Increment(Array<Texture>&&old)
+Array<Texture>LoopIncrement(Array<Texture>&&old)
 {
 	Array<Texture>newTextures(6);
 	for (auto& i : step(5))
@@ -54,7 +54,7 @@ void BackGroundImage::update()
 	}
 	if (f)
 	{
-		textures = Increment(std::move(textures));
+		textures = LoopIncrement(std::move(textures));
 	}
 }
 
