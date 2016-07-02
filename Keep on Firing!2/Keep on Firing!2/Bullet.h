@@ -9,10 +9,10 @@ public:
 		this->angle = angle;
 		this->speed = speed;
 	};
-	virtual ~Bullet() = default;
+	virtual ~Bullet() = 0 {};
 	
-	virtual void init(Vec2 pos, double angle, double speed)=0;
-	void update()override = 0;
-	void draw()const override = 0;
+	virtual void init(Vec2 pos, double angle, double speed);
+	void update()override;
+	void draw()const override;
 };
 

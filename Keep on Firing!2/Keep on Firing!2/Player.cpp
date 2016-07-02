@@ -49,11 +49,6 @@ void Player::draw() const
 	TextureAsset(L"player1").drawAt(pos);
 }
 
-bool Player::is_fire()
-{
-	return fire;
-}
-
 void Player::createBullet(MoverManager<Bullet>&bulletManager)
 {
 	/*if (frameCount % 2) {

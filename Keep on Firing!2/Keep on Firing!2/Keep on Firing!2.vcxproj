@@ -167,6 +167,7 @@
     <ClCompile Include="BackGroundImage.cpp" />
     <ClCompile Include="Bullet.cpp" />
     <ClCompile Include="Enemy.cpp" />
+    <ClCompile Include="EnemyNormalBullet.cpp" />
     <ClCompile Include="Game.cpp" />
     <ClCompile Include="Main.cpp" />
     <ClCompile Include="Mover.cpp" />
@@ -180,6 +181,8 @@
     <ResourceCompile Include="Resource.rc" />
   </ItemGroup>
   <ItemGroup>
+    <Image Include="Data\picture\Enemy0.png" />
+    <Image Include="Data\picture\enemyshot2.png" />
     <Image Include="Data\picture\GameScoreView.png" />
     <Image Include="Data\picture\meshot2.png" />
     <Image Include="Data\picture\MyVehicle0.png" />
@@ -296,6 +299,7 @@
     <ClInclude Include="Bullet.h" />
     <ClInclude Include="BulletFactory.h" />
     <ClInclude Include="Enemy.h" />
+    <ClInclude Include="EnemyNormalBullet.h" />
     <ClInclude Include="Game.h" />
     <ClInclude Include="IFirer.h" />
     <ClInclude Include="main.h" />

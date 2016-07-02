@@ -15,11 +15,9 @@ public:
 	void update()override;
 	void draw()const override;
 
-	bool is_fire();
 
 	void createBullet(MoverManager<Bullet>& bulletmanager)override;
 private:
-	bool fire = false;
 	int frameCount = 0;
 	
 

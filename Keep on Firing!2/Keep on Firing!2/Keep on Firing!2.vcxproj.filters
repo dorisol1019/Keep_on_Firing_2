@@ -126,6 +126,9 @@
     <ClCompile Include="Stage.cpp">
       <Filter>ソース ファイル</Filter>
     </ClCompile>
+    <ClCompile Include="EnemyNormalBullet.cpp">
+      <Filter>ソース ファイル\Mover</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="Resource.rc">
@@ -176,6 +179,12 @@
       <Filter>リソース ファイル\Data\picture</Filter>
     </Image>
     <Image Include="Data\picture\stage1.png">
+      <Filter>リソース ファイル\Data\picture</Filter>
+    </Image>
+    <Image Include="Data\picture\enemyshot2.png">
+      <Filter>リソース ファイル\Data\picture</Filter>
+    </Image>
+    <Image Include="Data\picture\Enemy0.png">
       <Filter>リソース ファイル\Data\picture</Filter>
     </Image>
   </ItemGroup>
@@ -487,6 +496,9 @@
     </ClInclude>
     <ClInclude Include="Stage.h">
       <Filter>ヘッダー ファイル</Filter>
+    </ClInclude>
+    <ClInclude Include="EnemyNormalBullet.h">
+      <Filter>ヘッダー ファイル\Mover</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

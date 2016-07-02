@@ -1,15 +1,21 @@
 #pragma once
 #include "Mover.h"
+#include"IFirer.h"
 class Enemy :
-	public Mover
+	public Mover,IFirer
 {
 public:
-	Enemy();
+
+	Enemy(Vec2 pos, double angle, double speed);
 	virtual ~Enemy();
 
+	virtual void init(Vec2 pos, double angle, double speed);
 	void update()override;
 	void draw()const override;
 
+	void createBullet(MoverManager<Bullet>&bulletManager);
+
 private:
+	Stopwatch shotTimer;
 };
 

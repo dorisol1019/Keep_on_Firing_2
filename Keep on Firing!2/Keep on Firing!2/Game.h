@@ -32,7 +32,8 @@ private:
 	MoverManager<Bullet>playerBulletManager;
 	MoverManager<Bullet>enemyBulletManager;
 	
-
+	Stopwatch enemyPopTimer;
+	
 	Stage stage;
 };
 

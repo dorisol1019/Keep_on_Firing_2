@@ -10,4 +10,10 @@ public:
 	~IFirer() = default;
 
 	virtual void createBullet(MoverManager<Bullet>&) = 0;
+
+protected:
+	bool fire = false;
+	bool is_fire() {
+		return fire;
+	}
 };
