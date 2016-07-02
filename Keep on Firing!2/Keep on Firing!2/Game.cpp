@@ -24,12 +24,13 @@ void Game::init()
 	enemyManager.add(e);
 	auto p = make_shared<Player>();
 	playerManager.add(p);
+	stage.init();
 }
 
 void Game::update()
 {
 	
-	backGroundImage.update();
+	stage.update();
 	if (Input::KeyZ.clicked)
 	{
 		enemyManager.add(make_shared<Enemy>());
@@ -49,7 +50,7 @@ void Game::update()
 void Game::draw() const
 {
 	
-	backGroundImage.draw();
+	stage.draw();
 	playerManager.draw();
 	enemyManager.draw();
 	playerBulletManager.draw();

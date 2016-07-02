@@ -173,6 +173,7 @@
     <ClCompile Include="MoverManager.cpp" />
     <ClCompile Include="Player.cpp" />
     <ClCompile Include="PlayerNormalBullet.cpp" />
+    <ClCompile Include="Stage.cpp" />
     <ClCompile Include="TitleMenu.cpp" />
   </ItemGroup>
   <ItemGroup>
@@ -302,6 +303,7 @@
     <ClInclude Include="MoverManager.h" />
     <ClInclude Include="Player.h" />
     <ClInclude Include="PlayerNormalBullet.h" />
+    <ClInclude Include="Stage.h" />
     <ClInclude Include="TitleMenu.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

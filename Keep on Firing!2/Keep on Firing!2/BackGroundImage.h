@@ -8,6 +8,7 @@ public:
 	BackGroundImage();
 	~BackGroundImage();
 
+	void init(String path);
 	void update();
 	void draw()const;
 

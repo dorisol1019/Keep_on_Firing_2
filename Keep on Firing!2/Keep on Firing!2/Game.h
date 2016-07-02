@@ -6,7 +6,7 @@
 #include"Enemy.h"
 #include"Player.h"
 #include"Bullet.h"
-#include"BackGroundImage.h"
+#include"Stage.h"
 
 enum class Moving
 {
@@ -33,6 +33,6 @@ private:
 	MoverManager<Bullet>enemyBulletManager;
 	
 
-	BackGroundImage backGroundImage;
+	Stage stage;
 };
 

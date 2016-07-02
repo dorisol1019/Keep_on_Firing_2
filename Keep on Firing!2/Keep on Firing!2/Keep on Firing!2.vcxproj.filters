@@ -123,6 +123,9 @@
     <ClCompile Include="BackGroundImage.cpp">
       <Filter>ソース ファイル</Filter>
     </ClCompile>
+    <ClCompile Include="Stage.cpp">
+      <Filter>ソース ファイル</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="Resource.rc">
@@ -480,6 +483,9 @@
       <Filter>ヘッダー ファイル\Mover</Filter>
     </ClInclude>
     <ClInclude Include="BackGroundImage.h">
+      <Filter>ヘッダー ファイル</Filter>
+    </ClInclude>
+    <ClInclude Include="Stage.h">
       <Filter>ヘッダー ファイル</Filter>
     </ClInclude>
   </ItemGroup>
