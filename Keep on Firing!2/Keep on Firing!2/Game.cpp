@@ -28,9 +28,10 @@ void Game::update()
 {
 
 	stage.update();
-	if (enemyPopTimer.ms() != 0 && enemyPopTimer.ms() % 100 == 0)
+	if (enemyPopTimer.ms() != 0 && enemyPopTimer.ms() / 1000 >= 1)
 	{
-		enemyManager.add(make_shared<Enemy>(Vec2{ Random(160.0,800-160.0),100 }, Radians(90), 3.0));
+		enemyManager.add(make_shared<Enemy>(Vec2{ Random(160.0,800 - 160.0),-110 }, Radians(90), 3.0));
+		enemyPopTimer.restart();
 	}
 	playerManager.update();
 	enemyManager.update();
