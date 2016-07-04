@@ -49,6 +49,11 @@ public:
 		}
 	}
 
+	size_t size()const 
+	{
+		return movers.size();
+	}
+
 	typename std::vector<std::shared_ptr<T>>::const_iterator begin() { return movers.begin(); }
 	typename std::vector<std::shared_ptr<T>>::const_iterator end() { return movers.end(); }
 

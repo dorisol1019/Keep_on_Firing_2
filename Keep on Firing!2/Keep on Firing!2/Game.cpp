@@ -1,7 +1,9 @@
 #include "Game.h"
 
 #include"PlayerNormalBullet.h"
+#include"BulletFactory.h"
 
+#include"EnemyNormalBullet.h"
 
 Game::Game()
 {
@@ -22,6 +24,10 @@ void Game::init()
 	playerManager.add(p);
 	stage.init();
 	enemyPopTimer.start();
+
+	BulletFactory::init<PlayerNormalBullet>();
+	BulletFactory::init<EnemyNormalBullet>();
+
 }
 
 void Game::update()
@@ -46,7 +52,6 @@ void Game::update()
 	}
 	playerBulletManager.update();
 	enemyBulletManager.update();
-
 }
 
 void Game::draw() const
@@ -59,4 +64,12 @@ void Game::draw() const
 	enemyBulletManager.draw();
 
 	TextureAsset(L"ScoreView").draw();
+
+
+#ifdef DEBUG
+	cout << "player_size:\t\t" << playerManager.size() << endl;
+	cout << "enemy_size:\t\t" << enemyManager.size() << endl;
+	cout << "playerBullet_size:\t" << playerBulletManager.size() << endl;
+	cout << "enemyBullet_size:\t" << enemyBulletManager.size() << endl;
+#endif // _DEBUG
 }

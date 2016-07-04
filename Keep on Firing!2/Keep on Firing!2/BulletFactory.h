@@ -14,11 +14,21 @@ namespace BulletFactory
 
 	static map<string, vector<shared_ptr<Bullet>>> bullets;
 
-	template<typename T, enable_if_t<is_base_of<Bullet, T>::value&!is_abstract<T>::value, nullptr_t> = nullptr>
+	template<typename T, enable_if_t<is_base_of<Bullet, T>::value & !is_abstract<T>::value, nullptr_t> = nullptr>
+	void init()
+	{
+		string index = string(typeid(T).name());
+		for (auto& i : step(50))
+		{
+			bullets[index].emplace_back(make_shared<T>(Vec2(0.0,-500.0), 0.0, -5.0));
+		}
+		return;
+	}
+
+	template<typename T, enable_if_t<is_base_of<Bullet, T>::value & !is_abstract<T>::value, nullptr_t> = nullptr>
 	shared_ptr<Bullet> createBullet(Vec2 pos, double angle, double speed)
 	{
 		string index = string(typeid(T).name());
-		//FontAsset(L"gameFont")(bullets[index].size()).draw({400,0});
 		for (auto& i : bullets[index])
 		{
 			if (!i->is_enable())
@@ -45,5 +55,5 @@ namespace BulletFactory
 		bullets[index].emplace_back(make_shared<Bullet>(pos, angle, speed));
 		return bullets[index].back();
 	}*/
-	
+
 }
