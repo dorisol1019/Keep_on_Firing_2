@@ -35,6 +35,7 @@ void Game::init()
 	BulletFactory::init<PlayerNormalBullet>();
 	BulletFactory::init<EnemyNormalBullet>();
 	gameTimer.start();
+	
 }
 
 void Game::update()

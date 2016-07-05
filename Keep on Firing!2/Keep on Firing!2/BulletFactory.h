@@ -40,6 +40,13 @@ namespace BulletFactory
 		bullets[index].emplace_back(make_shared<T>(pos, angle, speed));
 		return bullets[index].back();
 	}
+
+	template<typename T, enable_if_t<is_base_of<Bullet, T>::value & !is_abstract<T>::value, nullptr_t> = nullptr>
+	size_t size()
+	{
+		return bullets[typeid(T).name()].size();
+	}
+
 	/*
 	shared_ptr<Bullet> createBullet(Vec2 pos, double angle, double speed)
 	{
