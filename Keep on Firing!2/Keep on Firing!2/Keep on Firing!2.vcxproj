@@ -173,6 +173,7 @@
     <ClCompile Include="Mover.cpp" />
     <ClCompile Include="MoverManager.cpp" />
     <ClCompile Include="Player.cpp" />
+    <ClCompile Include="PlayerData.cpp" />
     <ClCompile Include="PlayerNormalBullet.cpp" />
     <ClCompile Include="Stage.cpp" />
     <ClCompile Include="TitleMenu.cpp" />
@@ -301,6 +302,7 @@
     <ClInclude Include="Enemy.h" />
     <ClInclude Include="EnemyNormalBullet.h" />
     <ClInclude Include="Game.h" />
+    <ClInclude Include="PlayerData.h" />
     <ClInclude Include="IFirer.h" />
     <ClInclude Include="main.h" />
     <ClInclude Include="Mover.h" />
