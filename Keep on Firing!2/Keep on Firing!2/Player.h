@@ -3,6 +3,7 @@
 #include"PlayerNormalBullet.h"
 #include"MoverManager.h"
 #include"IFirer.h"
+#include"PlayerData.h"
 #include<memory>
 
 class Player :
@@ -19,6 +20,7 @@ public:
 	void createBullet(MoverManager<Bullet>& bulletmanager)override;
 private:
 	int frameCount = 0;
+	PlayerData playerData;
 	
 
 //	shared_ptr

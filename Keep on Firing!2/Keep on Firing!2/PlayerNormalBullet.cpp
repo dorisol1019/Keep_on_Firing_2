@@ -5,7 +5,6 @@
 
 PlayerNormalBullet::PlayerNormalBullet(Vec2 pos, double angle, double speed):Bullet(pos,angle,speed)
 {
-	TextureAsset::Register(L"NormalBullet", L"Data/picture/meshot2.png");
 	init(pos, angle, speed);
 }
 

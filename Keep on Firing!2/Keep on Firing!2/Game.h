@@ -7,6 +7,7 @@
 #include"Player.h"
 #include"Bullet.h"
 #include"Stage.h"
+#include"GameScoreView.h"
 
 enum class Moving
 {
@@ -33,6 +34,9 @@ private:
 	MoverManager<Bullet>enemyBulletManager;
 	
 	Stopwatch enemyPopTimer;
+	Stopwatch gameTimer;
+
+	GameScoreView gameScoreView;
 	
 	Stage stage;
 };

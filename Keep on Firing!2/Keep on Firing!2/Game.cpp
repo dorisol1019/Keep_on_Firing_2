@@ -18,7 +18,14 @@ Game::~Game()
 void Game::init()
 {
 	FontAsset::Register(L"gameFont", 16, L"MSÉSÉVÉbÉN");
+	TextureAsset::Register(L"Enemy1", L"Data/picture/Enemy0.png");
+	TextureAsset::Register(L"EnemyBullet", L"Data/picture/enemyshot2.png");
+	TextureAsset::Register(L"NormalBullet", L"Data/picture/meshot2.png");
+	TextureAsset::Register(L"player1", L"Data/picture/MyVehicle0.png");
+
 	TextureAsset::Register(L"ScoreView", L"Data/picture/GameScoreView.png");
+	TextureAsset::Register(L"ScoreView1", L"Data/picture/GameScoreView1.png");
+	TextureAsset::Register(L"Next_", L"Data/picture/NEXT.png");
 
 	auto p = make_shared<Player>();
 	playerManager.add(p);
@@ -27,7 +34,7 @@ void Game::init()
 
 	BulletFactory::init<PlayerNormalBullet>();
 	BulletFactory::init<EnemyNormalBullet>();
-
+	gameTimer.start();
 }
 
 void Game::update()
@@ -52,6 +59,7 @@ void Game::update()
 	}
 	playerBulletManager.update();
 	enemyBulletManager.update();
+	gameScoreView.update();
 }
 
 void Game::draw() const
@@ -63,8 +71,8 @@ void Game::draw() const
 	playerBulletManager.draw();
 	enemyBulletManager.draw();
 
-	TextureAsset(L"ScoreView").draw();
-
+	//TextureAsset(L"ScoreView").draw();
+	gameScoreView.draw();
 
 #ifdef DEBUG
 	cout << "player_size:\t\t" << playerManager.size() << endl;

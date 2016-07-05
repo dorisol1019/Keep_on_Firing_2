@@ -3,7 +3,6 @@
 
 Player::Player()
 {
-	TextureAsset::Register(L"player1", L"Data/picture/MyVehicle0.png");
 	pos = { 300,200 };
 	speed = 5.0;
 }

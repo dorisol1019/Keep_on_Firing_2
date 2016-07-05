@@ -12,7 +12,7 @@ using namespace std;
 namespace BulletFactory
 {
 
-	static map<string, vector<shared_ptr<Bullet>>> bullets;
+	static unordered_map<string, vector<shared_ptr<Bullet>>> bullets;
 
 	template<typename T, enable_if_t<is_base_of<Bullet, T>::value & !is_abstract<T>::value, nullptr_t> = nullptr>
 	void init()

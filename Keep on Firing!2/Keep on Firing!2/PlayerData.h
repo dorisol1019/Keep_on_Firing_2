@@ -1,7 +1,7 @@
 #pragma once
 
 
-struct playerData
+struct PlayerData
 {
 	int hitPoint = 3;
 	int score = 0;

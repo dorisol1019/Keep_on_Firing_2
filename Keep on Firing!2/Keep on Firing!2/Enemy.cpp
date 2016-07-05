@@ -5,7 +5,6 @@
 
 Enemy::Enemy(Vec2 pos, double angle, double speed) :Mover()
 {
-	TextureAsset::Register(L"Enemy1", L"Data/picture/Enemy0.png");
 //	shotTimer.start();
 	init(pos, angle, speed);
 }

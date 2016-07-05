@@ -132,6 +132,9 @@
     <ClCompile Include="PlayerData.cpp">
       <Filter>ソース ファイル\Mover</Filter>
     </ClCompile>
+    <ClCompile Include="GameScoreView.cpp">
+      <Filter>ソース ファイル</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="Resource.rc">
@@ -505,6 +508,9 @@
     </ClInclude>
     <ClInclude Include="PlayerData.h">
       <Filter>ヘッダー ファイル\Mover</Filter>
+    </ClInclude>
+    <ClInclude Include="GameScoreView.h">
+      <Filter>ヘッダー ファイル</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
