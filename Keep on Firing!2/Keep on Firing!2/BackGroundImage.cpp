@@ -6,9 +6,9 @@ BackGroundImage::BackGroundImage()
 {
 	
 }
-Texture** LoopIncrement(Texture* old[6])
+void LoopIncrement(Texture_p old[6])
 {
-	Texture* newTextures[6];
+	Texture_p newTextures[6];
 	for (auto& i : step(5))
 	{
 		newTextures[i + 1] = old[i];
@@ -19,7 +19,7 @@ Texture** LoopIncrement(Texture* old[6])
 	{
 		old[i]=newTextures[i];
 	}
-	return newTextures;
+	return;
 }
 
 BackGroundImage::~BackGroundImage()
@@ -46,7 +46,7 @@ void BackGroundImage::init(String path)
 	for (auto& i : step(6))
 	{
 		textures[i] = Texture(images[pis[i].first]);
-		textures_p[i] = &textures[i];
+		textures_p[i]=&textures[i];
 		texturesPos[i] = { 160,-120 + 120 * i };
 	}
 }

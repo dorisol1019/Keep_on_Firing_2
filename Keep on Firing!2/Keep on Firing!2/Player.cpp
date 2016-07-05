@@ -50,7 +50,7 @@ void Player::draw() const
 
 void Player::createBullet(MoverManager<Bullet>&bulletManager)
 {
-	/*if (frameCount % 2) {
+	if (frameCount % 2) {
 		constexpr int sep = 5;
 		for (auto& i : step(sep))
 		{
@@ -59,7 +59,7 @@ void Player::createBullet(MoverManager<Bullet>&bulletManager)
 
 			bulletManager.add(BulletFactory::createBullet<PlayerNormalBullet>(pos,fireRad,5.0));
 		}
-	}*/
+	}
 	if (is_fire())
 	{
 //		for(auto&i:step(9))

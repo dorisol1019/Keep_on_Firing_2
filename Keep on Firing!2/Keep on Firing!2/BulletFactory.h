@@ -26,9 +26,9 @@ namespace BulletFactory
 	}
 
 	template<typename T, enable_if_t<is_base_of<Bullet, T>::value & !is_abstract<T>::value, nullptr_t> = nullptr>
-	shared_ptr<Bullet> createBullet(Vec2 pos, double angle, double speed)
+	inline shared_ptr<Bullet> createBullet(Vec2 pos, double angle, double speed)
 	{
-		string index = string(typeid(T).name());
+		const string&index = string(typeid(T).name());
 		for (auto& i : bullets[index])
 		{
 			if (!i->is_enable())

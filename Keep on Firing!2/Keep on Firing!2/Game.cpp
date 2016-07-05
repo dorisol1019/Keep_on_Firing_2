@@ -35,7 +35,7 @@ void Game::init()
 	BulletFactory::init<PlayerNormalBullet>();
 	BulletFactory::init<EnemyNormalBullet>();
 	gameTimer.start();
-	
+
 }
 
 void Game::update()
@@ -56,7 +56,7 @@ void Game::update()
 	}
 	for (auto& i : enemyManager)
 	{
-		i->createBullet(enemyBulletManager);
+//		i->createBullet(enemyBulletManager);
 	}
 	playerBulletManager.update();
 	enemyBulletManager.update();
@@ -75,10 +75,13 @@ void Game::draw() const
 	//TextureAsset(L"ScoreView").draw();
 	gameScoreView.draw();
 
+	FontAsset(L"gameFont")(Profiler::FPS(), L"fps").drawCenter({Window::Center().x,30});
 #ifdef DEBUG
 	cout << "player_size:\t\t" << playerManager.size() << endl;
 	cout << "enemy_size:\t\t" << enemyManager.size() << endl;
 	cout << "playerBullet_size:\t" << playerBulletManager.size() << endl;
 	cout << "enemyBullet_size:\t" << enemyBulletManager.size() << endl;
+	cout << "playerNormalBullet_size:\t" << BulletFactory::size<PlayerNormalBullet>() << endl;
+	cout << "enemyNormalBullet_size:\t" << BulletFactory::size<EnemyNormalBullet>() << endl;
 #endif // _DEBUG
 }

@@ -21,12 +21,12 @@ public:
 			bool enable = i->is_enable();
 			if (!enable)
 			{
+				i.reset();
 				i = m;
 				return;
 			}
 			if (i == m)
 			{
-				i = m;
 				return;
 			}
 		}

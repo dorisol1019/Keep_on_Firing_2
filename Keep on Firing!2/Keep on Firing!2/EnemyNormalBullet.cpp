@@ -14,7 +14,11 @@ EnemyNormalBullet::~EnemyNormalBullet()
 
 void EnemyNormalBullet::draw() const
 {
-	TextureAsset(L"EnemyBullet").rotate(Radians(90) + angle).drawAt(pos);
+	if (enable)
+	{
+
+		TextureAsset(L"EnemyBullet").rotate(Radians(90) + angle).drawAt(pos);
+	}
 }
 
 
