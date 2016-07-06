@@ -27,13 +27,13 @@ void Game::init()
 	TextureAsset::Register(L"ScoreView1", L"Data/picture/GameScoreView1.png");
 	TextureAsset::Register(L"Next_", L"Data/picture/NEXT.png");
 
-	auto p = make_shared<Player>();
-	playerManager.add(p);
+	auto p = make_unique<Player>();
+	playerManager.add(move(p));
 	stage.init();
 	enemyPopTimer.start();
 
-	BulletFactory::init<PlayerNormalBullet>();
-	BulletFactory::init<EnemyNormalBullet>();
+//	BulletFactory::init<PlayerNormalBullet>();
+//	BulletFactory::init<EnemyNormalBullet>();
 	gameTimer.start();
 
 }
@@ -44,7 +44,7 @@ void Game::update()
 	stage.update();
 	if (enemyPopTimer.ms() != 0 && enemyPopTimer.ms() / 1000 >= 1)
 	{
-		enemyManager.add(make_shared<Enemy>(Vec2{ Random(160.0,800 - 160.0),-110 }, Radians(90), 3.0));
+		enemyManager.add(make_unique<Enemy>(Vec2{ Random(160.0,800 - 160.0),-110 }, Radians(90), 3.0));
 		enemyPopTimer.restart();
 	}
 	playerManager.update();

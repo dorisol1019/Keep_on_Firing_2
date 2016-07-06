@@ -54,7 +54,7 @@ void Enemy::createBullet(MoverManager<Bullet>& bulletManager)
 	{
 		for (auto& i : step(3))
 		{
-			bulletManager.add(BulletFactory::createBullet<EnemyNormalBullet>({ pos.x,pos.y + 30 }, Radians(30 * i + 60), 5.0));
+			bulletManager.add(make_unique<EnemyNormalBullet>(Vec2{ pos.x,pos.y + 30 }, Radians(30 * i + 60), 5.0));
 		}
 		fire = false;
 	}

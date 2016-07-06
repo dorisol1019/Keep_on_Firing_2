@@ -15,14 +15,14 @@ public:
 	MoverManager() = default;
 	~MoverManager() = default;
 
-	void add(shared_ptr<T>m) {
+	void add(unique_ptr<T>&&m) {
 		for (auto&i : movers)
 		{
 			bool enable = i->is_enable();
 			if (!enable)
 			{
 				i.reset();
-				i = m;
+				i = std::move(m);
 				return;
 			}
 			if (i == m)
@@ -30,7 +30,7 @@ public:
 				return;
 			}
 		}
-		movers.push_back(m);
+		movers.push_back(std::move(m));
 	}
 
 	void update()
@@ -54,12 +54,12 @@ public:
 		return movers.size();
 	}
 
-	typename std::vector<std::shared_ptr<T>>::const_iterator begin() { return movers.begin(); }
-	typename std::vector<std::shared_ptr<T>>::const_iterator end() { return movers.end(); }
+	typename std::vector<std::unique_ptr<T>>::const_iterator begin() { return movers.begin(); }
+	typename std::vector<std::unique_ptr<T>>::const_iterator end() { return movers.end(); }
 
 
 private:
-	vector<shared_ptr<T>>movers;
+	vector<unique_ptr<T>>movers;
 
 
 

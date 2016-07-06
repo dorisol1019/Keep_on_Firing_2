@@ -57,7 +57,7 @@ void Player::createBullet(MoverManager<Bullet>&bulletManager)
 			const double fireRad = Radians(frameCount * 2) + TwoPi / sep * i;
 			//弾を発射した際の座標、角度、スピードを持たせる
 
-			bulletManager.add(make_shared<PlayerNormalBullet>(pos,fireRad,5.0));
+			bulletManager.add(make_unique<PlayerNormalBullet>(pos,fireRad,5.0));
 		}
 	}
 	if (is_fire())
