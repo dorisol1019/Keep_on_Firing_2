@@ -3,7 +3,7 @@
 #include"EnemyNormalBullet.h"
 
 
-Enemy::Enemy(Vec2 pos, double angle, double speed) :Mover()
+Enemy::Enemy(Vec2 pos, double angle, double speed) :Mover(pos,angle,speed)
 {
 //	shotTimer.start();
 	init(pos, angle, speed);

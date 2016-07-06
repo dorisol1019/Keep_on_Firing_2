@@ -1,7 +1,7 @@
 #include "Player.h"
 #include"BulletFactory.h"
 
-Player::Player()
+Player::Player():Mover(Vec2(),0.0,0.0)
 {
 	pos = { 300,200 };
 	speed = 5.0;

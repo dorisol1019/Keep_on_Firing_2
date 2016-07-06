@@ -4,7 +4,7 @@ class Bullet :
 	public Mover
 {
 public:
-	Bullet(Vec2 pos, double angle, double speed) {
+	Bullet(Vec2 pos, double angle, double speed):Mover(pos, angle, speed) {
 		this->pos = pos;
 		this->angle = angle;
 		this->speed = speed;

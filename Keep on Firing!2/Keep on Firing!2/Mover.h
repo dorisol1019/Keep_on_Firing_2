@@ -7,7 +7,7 @@ using namespace std;
 class Mover
 {
 public:
-	Mover();
+	Mover(Vec2 ,double ,double);
 	virtual ~Mover();
 
 	virtual void update() = 0;
