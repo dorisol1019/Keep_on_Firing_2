@@ -3,6 +3,7 @@
 
 struct PlayerData
 {
+	int playerNum = 0;
 	int hitPoint = 3;
 	int score = 0;
 	int highscore = 0;

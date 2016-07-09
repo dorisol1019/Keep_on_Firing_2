@@ -20,7 +20,7 @@ void Main()
 	Console::Open();
 	AppScene scenemanager(SceneManagerOption::ShowSceneName);
 #else
-	AppScene scenemanager();
+	AppScene scenemanager{};
 #endif // DEBUG
 
 	scenemanager.add<Game>(L"Game");

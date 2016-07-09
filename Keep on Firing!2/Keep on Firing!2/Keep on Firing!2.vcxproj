@@ -184,6 +184,7 @@
   </ItemGroup>
   <ItemGroup>
     <Image Include="Data\picture\Enemy0.png" />
+    <Image Include="Data\picture\Enemy0Ex.png" />
     <Image Include="Data\picture\enemyshot2.png" />
     <Image Include="Data\picture\GameScoreView.png" />
     <Image Include="Data\picture\meshot2.png" />

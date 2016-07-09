@@ -66,3 +66,8 @@ void Player::createBullet(MoverManager<Bullet>&bulletManager)
 //		bulletManager.add(BulletFactory::createBullet<PlayerNormalBullet>({ pos.x,pos.y - 10 }, Radians(-90), 5.0));
 	}
 }
+
+PlayerData* Player::getPlayerData()
+{
+	return &playerData;
+}

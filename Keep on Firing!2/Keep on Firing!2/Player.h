@@ -18,6 +18,8 @@ public:
 
 
 	void createBullet(MoverManager<Bullet>& bulletmanager)override;
+
+	PlayerData*getPlayerData();
 private:
 	int frameCount = 0;
 	PlayerData playerData;

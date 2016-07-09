@@ -18,7 +18,7 @@ Game::~Game()
 void Game::init()
 {
 	FontAsset::Register(L"gameFont", 16, L"MSÉSÉVÉbÉN");
-	TextureAsset::Register(L"Enemy1", L"Data/picture/Enemy0.png");
+	TextureAsset::Register(L"Enemy1", L"Data/picture/Enemy0Ex.png");
 	TextureAsset::Register(L"EnemyBullet", L"Data/picture/enemyshot2.png");
 	TextureAsset::Register(L"NormalBullet", L"Data/picture/meshot2.png");
 	TextureAsset::Register(L"player1", L"Data/picture/MyVehicle0.png");
@@ -35,6 +35,10 @@ void Game::init()
 //	BulletFactory::init<PlayerNormalBullet>();
 //	BulletFactory::init<EnemyNormalBullet>();
 	gameTimer.start();
+	for (auto& i : playerManager)
+	{
+		gameScoreView.add(i->getPlayerData());
+	}
 
 }
 
