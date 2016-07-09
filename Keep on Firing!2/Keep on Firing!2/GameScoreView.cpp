@@ -30,6 +30,8 @@ void GameScoreView::draw()const
 		font(L"Player", (playerData[i]->playerNum)).drawCenter({ 75 + 640 * i,25 });
 		font(L"score").draw({ 10,40 });
 		font(playerData[i]->score).drawCenter({ 80 + 640 * i,85 });
+
+		font(playerData[i]->bullet).drawCenter({ 80 + 640 * i,160 });
 		TextureAsset(L"Next_").drawAt(Vec2{ 640 * i + 80,500 });
 	}
 }

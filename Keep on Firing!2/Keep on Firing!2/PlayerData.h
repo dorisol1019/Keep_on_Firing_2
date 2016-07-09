@@ -8,8 +8,10 @@ struct PlayerData
 	int score = 0;
 	int highscore = 0;
 	int gotItem = 0;
-	int bullet = 10;
+	unsigned int bullet = 10;
 
+	int count=0;
 
+	void update();
 
 };

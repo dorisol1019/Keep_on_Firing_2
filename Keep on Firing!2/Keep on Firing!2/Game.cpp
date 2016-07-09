@@ -18,7 +18,7 @@ Game::~Game()
 void Game::init()
 {
 	FontAsset::Register(L"gameFont", 16, L"MSÉSÉVÉbÉN");
-	TextureAsset::Register(L"Enemy1", L"Data/picture/Enemy0Ex.png");
+	TextureAsset::Register(L"Enemy1", L"Data/picture/Enemy0.png");
 	TextureAsset::Register(L"EnemyBullet", L"Data/picture/enemyshot2.png");
 	TextureAsset::Register(L"NormalBullet", L"Data/picture/meshot2.png");
 	TextureAsset::Register(L"player1", L"Data/picture/MyVehicle0.png");
@@ -32,8 +32,8 @@ void Game::init()
 	stage.init();
 	enemyPopTimer.start();
 
-//	BulletFactory::init<PlayerNormalBullet>();
-//	BulletFactory::init<EnemyNormalBullet>();
+	//	BulletFactory::init<PlayerNormalBullet>();
+	//	BulletFactory::init<EnemyNormalBullet>();
 	gameTimer.start();
 	for (auto& i : playerManager)
 	{
@@ -60,11 +60,35 @@ void Game::update()
 	}
 	for (auto& i : enemyManager)
 	{
-//		i->createBullet(enemyBulletManager);
+		//		i->createBullet(enemyBulletManager);
 	}
 	playerBulletManager.update();
 	enemyBulletManager.update();
 	gameScoreView.update();
+
+	for (auto& i : playerManager)
+	{
+		if (i->is_enable()) {
+			for (auto& j : enemyManager)
+			{
+				if (j->is_enable()) {
+					if (i->Intersects(j->GetCollision()))
+					{
+						i->kill();
+					}
+				}
+			}
+			for (auto& j : enemyBulletManager)
+			{
+				if (j->is_enable()) {
+					if (i->Intersects(j->GetCollision()))
+					{
+						i->kill();
+					}
+				}
+			}
+		}
+	}
 }
 
 void Game::draw() const
@@ -79,7 +103,7 @@ void Game::draw() const
 	//TextureAsset(L"ScoreView").draw();
 	gameScoreView.draw();
 
-	FontAsset(L"gameFont")(Profiler::FPS(), L"fps").drawCenter({Window::Center().x,30});
+	FontAsset(L"gameFont")(Profiler::FPS(), L"fps").drawCenter({ Window::Center().x,30 });
 #ifdef DEBUG
 	cout << "player_size:\t\t" << playerManager.size() << endl;
 	cout << "enemy_size:\t\t" << enemyManager.size() << endl;

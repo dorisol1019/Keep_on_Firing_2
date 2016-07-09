@@ -14,5 +14,6 @@ public:
 	virtual void init(Vec2 pos, double angle, double speed);
 	void update()override;
 	void draw()const override;
+	Circle GetCollision() const;
 };
 

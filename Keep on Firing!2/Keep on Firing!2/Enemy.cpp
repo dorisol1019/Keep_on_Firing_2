@@ -3,9 +3,9 @@
 #include"EnemyNormalBullet.h"
 
 
-Enemy::Enemy(Vec2 pos, double angle, double speed) :Mover(pos,angle,speed)
+Enemy::Enemy(Vec2 pos, double angle, double speed) :Mover(pos, angle, speed)
 {
-//	shotTimer.start();
+	//	shotTimer.start();
 	init(pos, angle, speed);
 }
 
@@ -21,6 +21,7 @@ void Enemy::init(Vec2 pos, double angle, double speed)
 	this->angle = angle;
 	enable = true;
 	shotTimer.start();
+	collision = { pos,30 };
 }
 
 void Enemy::update()
@@ -28,6 +29,7 @@ void Enemy::update()
 	if (enable)
 	{
 		pos += speed*Vec2(Cos(angle), Sin(angle));
+		collision.setPos(pos);
 		if (/*shotTimer.ms() != 0 &&*/ shotTimer.ms() / 1000 >= 1)
 		{
 			fire = true;
@@ -58,4 +60,9 @@ void Enemy::createBullet(MoverManager<Bullet>& bulletManager)
 		}
 		fire = false;
 	}
+}
+
+Circle Enemy::GetCollision()const
+{
+	return collision;
 }

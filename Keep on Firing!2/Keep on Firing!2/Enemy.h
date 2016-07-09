@@ -15,7 +15,10 @@ public:
 
 	void createBullet(MoverManager<Bullet>&bulletManager);
 
+	Circle GetCollision() const;
+
 private:
+	Circle collision;
 	Stopwatch shotTimer;
 };
 

@@ -23,3 +23,8 @@ void Bullet::update()
 void Bullet::draw() const
 {
 }
+
+Circle Bullet::GetCollision()const
+{
+	return Circle(pos,3);
+}

@@ -20,11 +20,22 @@ public:
 	void createBullet(MoverManager<Bullet>& bulletmanager)override;
 
 	PlayerData*getPlayerData();
+	Circle GetCollision();
+
+	template<class Shape>
+	bool Intersects(const Shape & s)
+	{
+		return Geometry2D::Intersect(collision, s);
+
+	};
+
+	void kill();
 private:
 	int frameCount = 0;
 	PlayerData playerData;
 	
+	Circle collision;
 
-//	shared_ptr
+	//	shared_ptr
 };
 
