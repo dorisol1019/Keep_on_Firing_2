@@ -89,6 +89,21 @@ void Game::update()
 			}
 		}
 	}
+	for (auto& i : enemyManager)
+	{
+		if (i->is_enable()) {
+			for (auto& j : playerBulletManager)
+			{
+				if (j->is_enable())
+				{
+					if (i->GetCollision().intersects(j->GetCollision()))
+					{
+						i->kill();
+					}
+				}
+			}
+		}
+	}
 }
 
 void Game::draw() const

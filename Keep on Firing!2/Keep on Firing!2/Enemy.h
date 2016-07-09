@@ -17,6 +17,8 @@ public:
 
 	Circle GetCollision() const;
 
+	void kill();
+
 private:
 	Circle collision;
 	Stopwatch shotTimer;

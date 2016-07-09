@@ -66,3 +66,8 @@ Circle Enemy::GetCollision()const
 {
 	return collision;
 }
+
+void Enemy::kill()
+{
+	enable = false;
+}
