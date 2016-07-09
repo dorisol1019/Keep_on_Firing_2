@@ -36,6 +36,7 @@ private:
 	
 	Circle collision;
 
+	Stopwatch blinkTimer;
 	//	shared_ptr
 };
 

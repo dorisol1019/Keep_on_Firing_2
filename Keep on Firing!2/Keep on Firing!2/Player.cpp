@@ -3,7 +3,7 @@
 
 Player::Player() :Mover(Vec2(), 0.0, 0.0)
 {
-	pos = { 300,200 };
+	pos = { 800/2,450 };
 	speed = 3.0;
 	collision = { pos,15 };
 }
@@ -12,6 +12,8 @@ Player::Player() :Mover(Vec2(), 0.0, 0.0)
 Player::~Player()
 {
 }
+
+EasingController<double> easing(0.0, 0.5, Easing::Quart, 300);
 
 void Player::update()
 {
@@ -48,13 +50,45 @@ void Player::update()
 	}
 	else
 	{
+		bool f = false;
+		if (!blinkTimer.isActive())
+		{
+			pos = { Window::Center().x,700 };
+			blinkTimer.start();
+		}
+		else
+		{
+			if (pos.y <= 450)
+			{
+				f = true;
+			}
+			else {
+				pos += Vec2{ 0,-1 };
+				collision.setPos(pos);
 
+			}
+		}
+
+		auto e = easing.easeOut();
+		if (e == 0)
+		{
+			if (!f)
+				easing.start();
+			else {
+				enable = true;
+				blinkTimer.reset();
+			}
+		}
+		else if (e == 0.5) {
+			easing.start();
+		}
 	}
 }
 
 void Player::draw() const
 {
-	TextureAsset(L"player1").drawAt(pos);
+	auto e = easing.easeOut();
+	TextureAsset(L"player1").drawAt(pos, AlphaF(1 - e));
 	collision.drawFrame(1.0, 0.0, Palette::Red);
 }
 
