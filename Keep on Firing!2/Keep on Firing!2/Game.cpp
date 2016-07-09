@@ -21,7 +21,7 @@ void Game::init()
 	TextureAsset::Register(L"Enemy1", L"Data/picture/Enemy0.png");
 	TextureAsset::Register(L"EnemyBullet", L"Data/picture/enemyshot2.png");
 	TextureAsset::Register(L"NormalBullet", L"Data/picture/meshot2.png");
-	TextureAsset::Register(L"player1", L"Data/picture/MyVehicle0.png");
+	TextureAsset::Register(L"player1", L"Data/picture/MyVehicle0_1.png");
 
 	TextureAsset::Register(L"ScoreView", L"Data/picture/GameScoreView.png");
 	TextureAsset::Register(L"ScoreView1", L"Data/picture/GameScoreView1.png");
