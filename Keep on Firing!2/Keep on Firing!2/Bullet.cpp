@@ -28,3 +28,7 @@ Circle Bullet::GetCollision()const
 {
 	return Circle(pos,3);
 }
+
+void Bullet::kill() {
+	enable = false;
+}

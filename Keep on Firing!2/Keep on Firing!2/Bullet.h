@@ -15,5 +15,6 @@ public:
 	void update()override;
 	void draw()const override;
 	Circle GetCollision() const;
+	void kill();
 };
 

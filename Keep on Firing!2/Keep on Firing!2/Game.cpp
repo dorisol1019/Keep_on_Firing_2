@@ -96,9 +96,11 @@ void Game::update()
 			{
 				if (j->is_enable())
 				{
-					if (i->GetCollision().intersects(j->GetCollision()))
+					const auto&collision = i->GetCollision();
+					if (collision.intersects(j->GetCollision()))
 					{
 						i->kill();
+						j->kill();
 					}
 				}
 			}
