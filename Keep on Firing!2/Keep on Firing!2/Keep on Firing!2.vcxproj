@@ -298,6 +298,7 @@
     <Font Include="Example\YomogiFont.ttf" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Achievements.h" />
     <ClInclude Include="BackGroundImage.h" />
     <ClInclude Include="Bullet.h" />
     <ClInclude Include="BulletFactory.h" />
@@ -305,6 +306,7 @@
     <ClInclude Include="EnemyNormalBullet.h" />
     <ClInclude Include="Game.h" />
     <ClInclude Include="GameScoreView.h" />
+    <ClInclude Include="Observer.h" />
     <ClInclude Include="PlayerData.h" />
     <ClInclude Include="IFirer.h" />
     <ClInclude Include="main.h" />
@@ -313,6 +315,7 @@
     <ClInclude Include="Player.h" />
     <ClInclude Include="PlayerNormalBullet.h" />
     <ClInclude Include="Stage.h" />
+    <ClInclude Include="Subject.h" />
     <ClInclude Include="TitleMenu.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

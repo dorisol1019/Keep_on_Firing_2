@@ -12,6 +12,8 @@ Game::Game()
 
 Game::~Game()
 {
+	removeObsercer(achievements);
+	delete achievements;
 }
 
 
@@ -39,6 +41,8 @@ void Game::init()
 	{
 		gameScoreView.add(i->getPlayerData());
 	}
+	achievements = new Achievements{};
+	addObserver(achievements);
 
 }
 
@@ -101,6 +105,8 @@ void Game::update()
 					{
 						i->kill();
 						j->kill();
+
+						notify(*i, Event::enemy10kills);
 					}
 				}
 			}
@@ -119,7 +125,7 @@ void Game::draw() const
 
 	//TextureAsset(L"ScoreView").draw();
 	gameScoreView.draw();
-
+	achievements->write();
 	FontAsset(L"gameFont")(Profiler::FPS(), L"fps").drawCenter({ Window::Center().x,30 });
 #ifdef DEBUG
 	cout << "player_size:\t\t" << playerManager.size() << endl;

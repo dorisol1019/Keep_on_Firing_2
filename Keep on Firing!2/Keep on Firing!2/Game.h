@@ -8,7 +8,8 @@
 #include"Bullet.h"
 #include"Stage.h"
 #include"GameScoreView.h"
-
+#include"Subject.h"
+#include"Achievements.h"
 enum class Moving
 {
 	start,loop,loopend,end,connect,
@@ -17,7 +18,7 @@ enum class Moving
 
 
 class Game :
-	public AppScene::Scene
+	public AppScene::Scene,Subject
 {
 public:
 	Game();
@@ -39,5 +40,7 @@ private:
 	GameScoreView gameScoreView;
 	
 	Stage stage;
+
+	Achievements*achievements;
 };
 
