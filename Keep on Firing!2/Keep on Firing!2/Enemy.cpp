@@ -22,6 +22,7 @@ void Enemy::init(Vec2 pos, double angle, double speed)
 	enable = true;
 	shotTimer.start();
 	collision = { pos,30 };
+	HP = 1;
 }
 
 void Enemy::update()

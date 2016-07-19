@@ -17,6 +17,7 @@ void PlayerNormalBullet::init(Vec2 pos, double angle, double speed){
 	this->pos = pos;
 	this->angle = angle;
 	enable = true;
+	HP = 1;
 }
 
 void PlayerNormalBullet::update()

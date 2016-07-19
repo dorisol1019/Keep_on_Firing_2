@@ -34,8 +34,6 @@ void Game::init()
 	stage.init();
 	enemyPopTimer.start();
 
-	//	BulletFactory::init<PlayerNormalBullet>();
-	//	BulletFactory::init<EnemyNormalBullet>();
 	gameTimer.start();
 	for (auto& i : playerManager)
 	{
@@ -78,7 +76,8 @@ void Game::update()
 				if (j->is_enable()) {
 					if (i->Intersects(j->GetCollision()))
 					{
-						i->kill();
+						i->damage(1);
+						j->damage(1);
 					}
 				}
 			}
@@ -87,7 +86,8 @@ void Game::update()
 				if (j->is_enable()) {
 					if (i->Intersects(j->GetCollision()))
 					{
-						i->kill();
+						i->damage(1);
+						j->damage(1);
 					}
 				}
 			}
@@ -103,8 +103,8 @@ void Game::update()
 					const auto&collision = i->GetCollision();
 					if (collision.intersects(j->GetCollision()))
 					{
-						i->kill();
-						j->kill();
+						i->damage(1);
+						j->damage(1);
 
 						notify(*i, Event::enemy10kills);
 					}
