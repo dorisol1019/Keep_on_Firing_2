@@ -5,7 +5,7 @@
 EnemyNormalBullet::EnemyNormalBullet(Vec2 pos, double angle, double speed) :Bullet(pos, angle, speed)
 {
 	enable = true;
-	HP = 1;
+	health = 1;
 }
 
 

@@ -15,8 +15,8 @@ public:
 
 	void kill() { enable = false; }
 	void damage(int damage) {
-		HP -= damage;
-		if (HP <= 0) {
+		health -= damage;
+		if (health <= 0) {
 			kill();
 		}
 	};
@@ -34,7 +34,7 @@ protected:
 	Vec2 d = Vec2( 0,0 );
 //	Circle&collition = { pos.xy(),0 };
 	bool enable = true;
-	int HP = -1;
+	int health = -1;
 	uint32 attack = 0;
 
 };

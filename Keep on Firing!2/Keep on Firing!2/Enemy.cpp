@@ -1,14 +1,21 @@
 #include "Enemy.h"
 #include"BulletFactory.h"
 #include"EnemyNormalBullet.h"
+#include"EnemyBreed.h"
 
-
-Enemy::Enemy(Vec2 pos, double angle, double speed) :Mover(pos, angle, speed)
+Enemy::Enemy(Vec2 pos, double angle, double speed) :Mover(pos, angle, speed),enemyBreed(EnemyBreed(1,speed))
 {
 	//	shotTimer.start();
 	init(pos, angle, speed);
 }
 
+Enemy::Enemy(Vec2 pos, double angle, EnemyBreed & enemyBreed) :
+	Mover(pos, angle, enemyBreed.getSpeed()),
+	enemyBreed(enemyBreed)
+{
+	init(pos, angle, enemyBreed.getSpeed());
+	health = enemyBreed.getHealth();
+}
 
 Enemy::~Enemy()
 {
@@ -22,7 +29,7 @@ void Enemy::init(Vec2 pos, double angle, double speed)
 	enable = true;
 	shotTimer.start();
 	collision = { pos,30 };
-	HP = 1;
+	health = 1;
 }
 
 void Enemy::update()

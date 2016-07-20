@@ -6,7 +6,7 @@ Player::Player() :Mover(Vec2(), 0.0, 0.0)
 	pos = { 800/2,450 };
 	speed = 3.0;
 	collision = { pos,15 };
-	HP = 1;
+	health = 1;
 }
 
 

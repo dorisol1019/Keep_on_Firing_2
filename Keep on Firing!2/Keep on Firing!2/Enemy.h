@@ -1,12 +1,15 @@
 #pragma once
 #include "Mover.h"
 #include"IFirer.h"
+//#include"EnemyBreed.h"
 class Enemy :
-	public Mover,IFirer
+	public Mover, IFirer
 {
+	friend class EnemyBreed;
 public:
 
 	Enemy(Vec2 pos, double angle, double speed);
+	Enemy(Vec2 pos, double angle,EnemyBreed&enemyBreed );
 	virtual ~Enemy();
 
 	virtual void init(Vec2 pos, double angle, double speed);
@@ -22,5 +25,7 @@ public:
 private:
 	Circle collision;
 	Stopwatch shotTimer;
+
+	EnemyBreed&enemyBreed;
 };
 
