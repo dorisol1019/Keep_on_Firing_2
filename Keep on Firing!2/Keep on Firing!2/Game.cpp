@@ -19,8 +19,9 @@ Game::~Game()
 
 void Game::init()
 {
+	
 	FontAsset::Register(L"gameFont", 16, L"MSÉSÉVÉbÉN");
-	TextureAsset::Register(L"Enemy1", L"Data/picture/Enemy0.png");
+	TextureAsset::Register(L"Enemy1", L"Data/picture/Enemy0_.png");
 	TextureAsset::Register(L"EnemyBullet", L"Data/picture/enemyshot2.png");
 	TextureAsset::Register(L"NormalBullet", L"Data/picture/meshot2.png");
 	TextureAsset::Register(L"player1", L"Data/picture/MyVehicle0_1.png");
@@ -42,6 +43,7 @@ void Game::init()
 	achievements = new Achievements{};
 	addObserver(achievements);
 
+	normalEnemy = make_unique<EnemyBreed>( 1, 3 );
 }
 
 void Game::update()
@@ -50,7 +52,7 @@ void Game::update()
 	stage.update();
 	if (enemyPopTimer.ms() != 0 && enemyPopTimer.ms() / 1000 >= 1)
 	{
-		enemyManager.add(make_unique<Enemy>(Vec2{ Random(160.0,800 - 160.0),-110 }, Radians(90), 3.0));
+		enemyManager.add(normalEnemy->newEnemy());
 		enemyPopTimer.restart();
 	}
 	playerManager.update();

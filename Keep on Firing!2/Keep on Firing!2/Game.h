@@ -10,6 +10,7 @@
 #include"GameScoreView.h"
 #include"Subject.h"
 #include"Achievements.h"
+#include"EnemyBreed.h"
 enum class Moving
 {
 	start,loop,loopend,end,connect,
@@ -42,5 +43,7 @@ private:
 	Stage stage;
 
 	Achievements*achievements;
+
+	unique_ptr<EnemyBreed>normalEnemy;
 };
 

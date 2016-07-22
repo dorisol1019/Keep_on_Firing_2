@@ -8,7 +8,6 @@ class Enemy :
 	friend class EnemyBreed;
 public:
 
-	Enemy(Vec2 pos, double angle, double speed);
 	Enemy(Vec2 pos, double angle,EnemyBreed&enemyBreed );
 	virtual ~Enemy();
 

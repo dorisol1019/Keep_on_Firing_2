@@ -3,11 +3,6 @@
 #include"EnemyNormalBullet.h"
 #include"EnemyBreed.h"
 
-Enemy::Enemy(Vec2 pos, double angle, double speed) :Mover(pos, angle, speed),enemyBreed(EnemyBreed(1,speed))
-{
-	//	shotTimer.start();
-	init(pos, angle, speed);
-}
 
 Enemy::Enemy(Vec2 pos, double angle, EnemyBreed & enemyBreed) :
 	Mover(pos, angle, enemyBreed.getSpeed()),
