@@ -11,6 +11,9 @@ public:
 	~EnemyBreed()
 	{
 	}
+	String getName()const noexcept {
+		return name;
+	}
 	int getId()const noexcept {
 		return id;
 	}
@@ -41,6 +44,8 @@ public:
 	}
 
 private:
+	//ŒÂ‘Ì–¼
+	String name = nullptr;
 	//Mover‚Ì‘®«
 	//enumŒ^‚É‚µ‚æ‚¤‚º
 	//ex)player
@@ -52,7 +57,7 @@ private:
 	int attack = -1;
 	//–hŒä—Í
 	int defense = -1;
-	//ˆÚ“®‚Ì‘¬‚³[px]
+	//ˆÚ“®‚Ì‘¬‚³[dot]
 	int speed = -1;
 	//‰½‚Ìí—Ş‚Ì’e‚ğo‚·‚©
 	//enumŒ^‚Ì‚ª—Ç‚³‚»‚¤
