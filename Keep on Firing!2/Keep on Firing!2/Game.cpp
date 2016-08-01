@@ -19,16 +19,18 @@ Game::~Game()
 
 void Game::init()
 {
-	
+
 	FontAsset::Register(L"gameFont", 16, L"MSゴシック");
 	TextureAsset::Register(L"Enemy1", L"Data/picture/Enemy0_.png");
 	TextureAsset::Register(L"EnemyBullet", L"Data/picture/enemyshot2.png");
 	TextureAsset::Register(L"NormalBullet", L"Data/picture/meshot2.png");
 	TextureAsset::Register(L"player1", L"Data/picture/MyVehicle0_1.png");
+//	TextureAsset::Register(L"stage1", L"Data/maptip/stage1.png"); マップチップにするためこの画像分割しないと
 
 	TextureAsset::Register(L"ScoreView", L"Data/picture/GameScoreView.png");
 	TextureAsset::Register(L"ScoreView1", L"Data/picture/GameScoreView1.png");
 	TextureAsset::Register(L"Next_", L"Data/picture/NEXT.png");
+
 
 	auto p = make_unique<Player>();
 	playerManager.add(move(p));
@@ -43,7 +45,7 @@ void Game::init()
 	achievements = new Achievements{};
 	addObserver(achievements);
 
-	normalEnemy = make_unique<EnemyBreed>( 1, 3 );
+	normalEnemy = make_unique<EnemyBreed>(1, 3);
 }
 
 void Game::update()
@@ -119,7 +121,7 @@ void Game::update()
 void Game::draw() const
 {
 
-	stage.draw();
+	//	stage.draw();
 	playerManager.draw();
 	enemyManager.draw();
 	playerBulletManager.draw();

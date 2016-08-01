@@ -8,13 +8,19 @@ public:
 	EnemyBreed(int health, int speed) :health(health), speed(speed)
 	{}
 
+	EnemyBreed(String name,String id,int health,int attack,int defense,int speed):
+		name(name),id(id),
+		health(health),attack(attack),
+		defense(defense),speed(speed)
+	{}
+
 	~EnemyBreed()
 	{
 	}
 	String getName()const noexcept {
 		return name;
 	}
-	int getId()const noexcept {
+	String getId()const noexcept {
 		return id;
 	}
 	//getter:‘Ì—Í‚Ìæ“¾
@@ -45,12 +51,12 @@ public:
 
 private:
 	//ŒÂ‘Ì–¼
-	String name = nullptr;
+	String name = L"";
 	//Mover‚Ì‘®«
 	//enumŒ^‚É‚µ‚æ‚¤‚º
 	//ex)player
 	//ex)enemy
-	int id = -1;
+	String id = L"";
 	//HP:‘Ì—Í
 	int health = -1;
 	//UŒ‚—Í
