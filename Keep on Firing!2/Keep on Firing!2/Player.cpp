@@ -3,7 +3,7 @@
 
 Player::Player() :Mover(Vec2(), 0.0, 0.0)
 {
-	pos = { 800/2,450 };
+	pos = { (640-128)/2+120,400 };
 	speed = 3.0;
 	collision = { pos,15 };
 	health = 1;
@@ -40,7 +40,7 @@ void Player::update()
 			d.x = -1;
 		}
 		pos += speed*d*Vec2({ Cos(0),Sin(1) });
-		pos = Vec2(Clamp(pos.x, 160.0, 640.0), Clamp(pos.y, 0.0, 600.0));
+		pos = Vec2(Clamp(pos.x, 128.0, 640.0), Clamp(pos.y, 0.0, 480.0));
 		collision.setPos(pos);
 
 		if (Input::KeyZ.clicked)
@@ -54,12 +54,12 @@ void Player::update()
 		bool f = false;
 		if (!blinkTimer.isActive())
 		{
-			pos = { Window::Center().x,700 };
+			pos = { Window::Center().x,600 };
 			blinkTimer.start();
 		}
 		else
 		{
-			if (pos.y <= 450)
+			if (pos.y <= 400)
 			{
 				f = true;
 			}

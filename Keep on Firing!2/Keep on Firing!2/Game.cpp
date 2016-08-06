@@ -28,7 +28,7 @@ void Game::init()
 //	TextureAsset::Register(L"stage1", L"Data/maptip/stage1.png"); マップチップにするためこの画像分割しないと
 
 	TextureAsset::Register(L"ScoreView", L"Data/picture/GameScoreView.png");
-	TextureAsset::Register(L"ScoreView1", L"Data/picture/GameScoreView1.png");
+	TextureAsset::Register(L"ScoreView1", L"Data/picture/GameScoreView2.png");
 	TextureAsset::Register(L"Next_", L"Data/picture/NEXT.png");
 
 
